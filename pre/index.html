@@ -1,209 +1,522 @@
 <!DOCTYPE html>
-<html lang="it">
+<html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Salute e Benessere - Approfondimento Speciale</title>
-    <style>
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            line-height: 1.6;
-            color: #333;
-            background-color: #f9f9f9;
-            margin: 0;
-            padding: 0;
-        }
-        header {
-            background-color: #fff;
-            border-bottom: 1px solid #ddd;
-            padding: 10px 20px;
-            text-align: center;
-        }
-        .category-tag {
-            color: #d4af37;
-            font-weight: bold;
-            text-transform: uppercase;
-            font-size: 0.9em;
-            letter-spacing: 1px;
-        }
-        .urgency-bar {
-            background-color: #ffeb3b;
-            color: #000;
-            text-align: center;
-            padding: 5px;
-            font-size: 0.85em;
-            font-weight: bold;
-        }
-        .container {
-            max-width: 800px;
-            margin: 20px auto;
-            background: #fff;
-            padding: 30px;
-            box-shadow: 0 0 10px rgba(0,0,0,0.05);
-        }
-        h1 {
-            font-size: 2.2em;
-            line-height: 1.2;
-            color: #111;
-            margin-bottom: 15px;
-        }
-        .subtitle {
-            font-size: 1.2em;
-            color: #666;
-            margin-bottom: 25px;
-        }
-        .main-image {
-            width: 100%;
-            max-width: 100%;
-            height: auto;
-            border: 3px dashed #28a745;
-            margin-bottom: 20px;
-            cursor: pointer;
-        }
-        p {
-            margin-bottom: 20px;
-            font-size: 1.1em;
-        }
-        .quote {
-            border-left: 5px solid #d4af37;
-            padding-left: 20px;
-            font-style: italic;
-            margin: 30px 0;
-            color: #555;
-        }
-        .cta-button {
-            display: block;
-            width: 100%;
-            max-width: 400px;
-            margin: 30px auto;
-            background-color: #d4af37;
-            color: #000;
-            text-align: center;
-            padding: 20px;
-            font-size: 1.5em;
-            font-weight: bold;
-            text-decoration: none;
-            border-radius: 5px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-            transition: transform 0.2s;
-        }
-        .cta-button:hover {
-            transform: scale(1.02);
-        }
-        .testimonial {
-            background-color: #f1f1f1;
-            padding: 20px;
-            border-radius: 10px;
-            margin: 40px 0;
-            display: flex;
-            align-items: center;
-        }
-        .testimonial img {
-            width: 80px;
-            height: 80px;
-            border-radius: 50%;
-            margin-right: 20px;
-        }
-        .testimonial-text {
-            font-style: italic;
-        }
-        footer {
-            background-color: #fff;
-            padding: 40px 20px;
-            text-align: center;
-            font-size: 0.85em;
-            color: #777;
-            border-top: 1px solid #eee;
-        }
-        .disclaimer {
-            max-width: 800px;
-            margin: 0 auto 20px;
-            text-align: justify;
-            line-height: 1.4;
-        }
-        .footer-links a {
-            color: #777;
-            margin: 0 10px;
-            text-decoration: none;
-        }
-        /* Tracker Placeholder */
-        /* Inserire qui lo script del tracker RedTrack quando disponibile */
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Boteco do Val e Guest House Iracema</title>
+  <meta name="description" content="Boteco do Val e Guest House Iracema: apresentação institucional da empresa, dados cadastrais, base legal e informações de contato em Fortaleza - CE.">
+  <style>
+    :root {
+      --bg: #f5f2ed;
+      --surface: #fffdfb;
+      --ink: #231c18;
+      --muted: #665a4e;
+      --line: #ddd2c6;
+      --accent: #8a4829;
+      --accent-soft: #f2e4d8;
+      --shadow: 0 16px 40px rgba(35, 28, 24, 0.08);
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: "Segoe UI", Arial, sans-serif;
+      color: var(--ink);
+      background: linear-gradient(180deg, #faf8f4 0%, var(--bg) 100%);
+      line-height: 1.7;
+    }
+    a { color: inherit; text-decoration: none; }
+    .wrap { width: min(1120px, calc(100% - 32px)); margin: 0 auto; }
+    .topbar {
+      position: sticky;
+      top: 0;
+      z-index: 40;
+      background: rgba(250, 248, 244, 0.92);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid rgba(102, 90, 78, 0.12);
+    }
+    .topbar-inner {
+      min-height: 86px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      min-width: 0;
+    }
+    .brand-mark {
+      width: 58px;
+      height: 58px;
+      border-radius: 18px;
+      display: grid;
+      place-items: center;
+      background: linear-gradient(145deg, #8a4829, #60311a);
+      color: #fff7f1;
+      font-weight: 800;
+      font-size: 0.75rem;
+      letter-spacing: 0.08em;
+      box-shadow: var(--shadow);
+      flex: 0 0 auto;
+    }
+    .brand-copy strong,
+    .brand-copy span { display: block; }
+    .brand-copy strong { font-size: 1rem; letter-spacing: 0.01em; }
+    .brand-copy span { color: var(--muted); font-size: 0.82rem; }
+    .nav {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px 18px;
+      font-size: 0.95rem;
+      color: var(--muted);
+    }
+    .nav a:hover,
+    .nav a:focus-visible { color: var(--accent); }
+    .hero { padding: 44px 0 20px; }
+    .hero-card,
+    .card,
+    .footer-wrap {
+      background: var(--surface);
+      border: 1px solid rgba(102, 90, 78, 0.12);
+      border-radius: 28px;
+      box-shadow: var(--shadow);
+    }
+    .hero-card { padding: 36px 34px; }
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 14px;
+      border-radius: 999px;
+      background: var(--accent-soft);
+      color: var(--accent);
+      font-size: 0.84rem;
+      font-weight: 700;
+      letter-spacing: 0.03em;
+      text-transform: uppercase;
+    }
+    .eyebrow::before {
+      content: "";
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--accent);
+    }
+    h1, h2, h3 {
+      margin: 0;
+      line-height: 1.12;
+      letter-spacing: -0.03em;
+    }
+    h1 {
+      margin-top: 20px;
+      font-size: clamp(2.2rem, 5vw, 4.2rem);
+      max-width: 13ch;
+    }
+    .hero-card p {
+      margin: 18px 0 0;
+      max-width: 64ch;
+      color: #40362e;
+      font-size: 1.04rem;
+    }
+    .hero-points {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 16px;
+      margin-top: 28px;
+    }
+    .point {
+      padding: 18px;
+      border-radius: 20px;
+      background: #faf5ef;
+      border: 1px solid rgba(102, 90, 78, 0.1);
+    }
+    .point strong { display: block; margin-bottom: 6px; font-size: 0.98rem; }
+    .point span { display: block; color: var(--muted); font-size: 0.92rem; }
+    section { padding: 22px 0; }
+    .section-head {
+      display: grid;
+      grid-template-columns: minmax(0, 0.82fr) minmax(0, 1.18fr);
+      gap: 24px;
+      align-items: end;
+      margin-bottom: 20px;
+    }
+    .section-head h2 { font-size: clamp(1.9rem, 3vw, 3rem); }
+    .section-head p { margin: 0; color: var(--muted); }
+    .about-grid,
+    .services-grid,
+    .contact-grid,
+    .footer-top,
+    .fiscal { display: grid; gap: 20px; }
+    .about-grid,
+    .contact-grid,
+    .footer-top { grid-template-columns: 1fr 1fr; }
+    .about-copy,
+    .about-notes,
+    .contact-panel,
+    .identity-panel { padding: 28px; }
+    .about-copy p,
+    .about-notes p,
+    .contact-panel p,
+    .identity-panel p {
+      margin: 0 0 16px;
+      color: #40362e;
+    }
+    .about-copy p:last-child,
+    .about-notes p:last-child,
+    .contact-panel p:last-child,
+    .identity-panel p:last-child { margin-bottom: 0; }
+    .services-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+    .service-card { padding: 24px 22px; }
+    .service-index {
+      display: inline-flex;
+      width: 38px;
+      height: 38px;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 14px;
+      border-radius: 50%;
+      background: var(--accent-soft);
+      color: var(--accent);
+      font-weight: 700;
+    }
+    .service-card h3 { font-size: 1.16rem; margin-bottom: 10px; }
+    .service-card p { margin: 0; color: var(--muted); }
+    .detail-list {
+      display: grid;
+      gap: 14px;
+      margin-top: 18px;
+    }
+    .detail {
+      padding: 16px 18px;
+      border-radius: 18px;
+      background: #faf5ef;
+      border: 1px solid rgba(102, 90, 78, 0.1);
+    }
+    .detail strong {
+      display: block;
+      margin-bottom: 4px;
+      font-size: 0.96rem;
+    }
+    .detail span {
+      display: block;
+      color: var(--muted);
+      font-size: 0.94rem;
+      word-break: break-word;
+    }
+    .cta-band {
+      margin: 6px 0 4px;
+      padding: 24px;
+      border-radius: 24px;
+      background: linear-gradient(135deg, #4a2616, #7b4025 55%, #a45f38 100%);
+      color: #fff8f1;
+      box-shadow: var(--shadow);
+    }
+    .cta-band strong {
+      display: block;
+      font-size: 1.18rem;
+      margin-bottom: 6px;
+    }
+    .cta-band p {
+      margin: 0;
+      color: rgba(255, 248, 241, 0.84);
+    }
+    footer { padding: 0 0 40px; }
+    .footer-wrap {
+      padding: 30px;
+      background: #201915;
+      color: #f9efe7;
+    }
+    .footer-top {
+      padding-bottom: 24px;
+      border-bottom: 1px solid rgba(249, 239, 231, 0.12);
+    }
+    .footer-top p {
+      margin: 10px 0 0;
+      color: rgba(249, 239, 231, 0.76);
+      max-width: 60ch;
+    }
+    .footer-links {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 10px 18px;
+      align-content: start;
+    }
+    .footer-links a:hover,
+    .footer-links a:focus-visible { color: #ffd7bf; }
+    .fiscal {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      margin-top: 22px;
+    }
+    .fiscal-box {
+      padding: 16px 18px;
+      border-radius: 18px;
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid rgba(249, 239, 231, 0.08);
+    }
+    .fiscal-box strong {
+      display: block;
+      margin-bottom: 6px;
+      font-size: 0.92rem;
+    }
+    .fiscal-box span {
+      display: block;
+      color: rgba(249, 239, 231, 0.78);
+      font-size: 0.93rem;
+    }
+    @media (max-width: 960px) {
+      .section-head,
+      .about-grid,
+      .contact-grid,
+      .footer-top,
+      .services-grid,
+      .fiscal,
+      .hero-points { grid-template-columns: 1fr; }
+      .topbar-inner {
+        min-height: auto;
+        padding: 12px 0;
+        align-items: flex-start;
+        flex-direction: column;
+      }
+    }
+    @media (max-width: 640px) {
+      .wrap { width: min(100% - 20px, 1120px); }
+      .hero-card,
+      .about-copy,
+      .about-notes,
+      .contact-panel,
+      .identity-panel,
+      .footer-wrap {
+        padding-left: 20px;
+        padding-right: 20px;
+      }
+      .nav { font-size: 0.86rem; }
+      .footer-links { grid-template-columns: 1fr; }
+    }
+  </style>
 </head>
 <body>
-
-    <div class="urgency-bar">
-        Oltre 12.450 italiani hanno cercato questa informazione questo mese
-    </div>
-
-    <header>
-        <div class="category-tag">Salute & Benessere</div>
-    </header>
-
-    <div class="container">
-        <h1>L'antico rituale dorato che sta incuriosendo migliaia di persone in Italia</h1>
-        <p class="subtitle">Una curiosità millenaria legata a un ingrediente naturale che molti hanno già in dispensa.</p>
-
-        <a href="http://metodoproelite.online/vslit3?utm_source={rt_source}&utm_campaign={rt_campaign}&utm_medium={sub15}&utm_content={rt_ad}&utm_term={rt_adgroup}&subid2={sub16}?utm_source={rt_source}&utm_campaign={rt_campaign}&utm_medium={sub15}&utm_content={rt_ad}&utm_term={rt_adgroup}&subid2={sub16}">
-            <img src="img/honey_spoon.png" alt="Miele dorato" class="main-image">
-        </a>
-        <a href="http://metodoproelite.online/vslit3?utm_source={rt_source}&utm_campaign={rt_campaign}&utm_medium={sub15}&utm_content={rt_ad}&utm_term={rt_adgroup}&subid2={sub16}" class="cta-button">SCOPRI DI PIÙ ORA</a>
-
-        <p>Negli ultimi tempi, un particolare interesse sta crescendo attorno a una sostanza naturale che accompagna l'umanità da millenni. Non si tratta di una nuova scoperta scientifica, ma di una rivalutazione di ciò che gli antichi chiamavano "oro liquido".</p>
-
-        <p>Molti esperti di nutrizione hanno iniziato a osservare come l'integrazione consapevole di certi tipi di nettare possa favorire un senso generale di benessere e vitalità. La curiosità nasce dal modo in cui questo elemento interagisce con le nostre abitudini quotidiane, offrendo un supporto naturale che molti sembrano aver dimenticato nella frenesia moderna.</p>
-
-        <div class="quote">
-            "L'uso strategico di ingredienti naturali puri può essere un eccellente alleato per chi desidera mantenere uno stile di vita attivo e una mente pronta, senza ricorrere a soluzioni sintetiche." — Esperti in Nutrizione Funzionale.
+  <header class="topbar">
+    <div class="wrap topbar-inner">
+      <a class="brand" href="#inicio" aria-label="Ir para o início">
+        <div class="brand-mark" aria-hidden="true">BVG</div>
+        <div class="brand-copy">
+          <strong>Boteco do Val e Guest House Iracema</strong>
+          <span>Apresentação institucional da empresa</span>
         </div>
+      </a>
+      <nav class="nav" aria-label="Navegação principal">
+        <a href="#inicio">Início</a>
+        <a href="#sobre">Sobre Nós</a>
+        <a href="#servicos">Produtos/Serviços</a>
+        <a href="#contato">Contato</a>
+      </nav>
+    </div>
+  </header>
 
-        <a href="http://metodoproelite.online/vslit3?utm_source={rt_source}&utm_campaign={rt_campaign}&utm_medium={sub15}&utm_content={rt_ad}&utm_term={rt_adgroup}&subid2={sub16}" class="cta-button">SCOPRI DI PIÙ ORA</a>
-
-        <a href="http://metodoproelite.online/vslit3?utm_source={rt_source}&utm_campaign={rt_campaign}&utm_medium={sub15}&utm_content={rt_ad}&utm_term={rt_adgroup}&subid2={sub16}">
-            <img src="img/honeycomb.png" alt="Favo di miele" class="main-image">
-        </a>
-
-        <p>La particolarità di questo "meccanismo naturale" risiede nella sua purezza. Non tutti i prodotti sono uguali, e la chiave sembra essere nascosta nel processo di estrazione e nella combinazione specifica di elementi che la natura mette a disposizione.</p>
-
-        <p>Perché così tante persone sopra i 60 anni stanno riscoprendo questa tradizione? La risposta potrebbe risiedere in un video informativo che sta circolando online, dove viene spiegato passo dopo passo come questo rituale mattutino può fare la differenza nella percezione della propria lucidità e concentrazione quotidiana.</p>
-
-        <div class="testimonial">
-            <img src="https://ui-avatars.com/api/?name=Giuseppe+R&background=d4af37&color=fff" alt="Avatar Giuseppe">
-            <div class="testimonial-text">
-                "Ho sempre amato le soluzioni naturali. Da quando ho iniziato a seguire questi consigli, mi sento molto più presente e attivo durante le mie letture pomeridiane. È incredibile come una cosa così semplice possa aiutare così tanto." — <strong>Giuseppe R., 67 anni</strong>
+  <main>
+    <section class="hero" id="inicio">
+      <div class="wrap">
+        <div class="hero-card">
+          <span class="eyebrow">Identidade comercial clara</span>
+          <h1>Presença digital organizada para apresentar a empresa com contexto e consistência.</h1>
+          <p>
+            A Boteco do Val e Guest House Iracema utiliza sua presença digital para reunir informações
+            institucionais, identificação empresarial e documentos legais em um ambiente simples,
+            responsivo e de navegação previsível.
+          </p>
+          <p>
+            A estrutura desta página foi pensada para evitar apresentação superficial, reforçar a
+            associação entre marca e operação e manter visíveis os dados cadastrais da empresa de forma
+            direta e acessível.
+          </p>
+          <div class="hero-points">
+            <div class="point">
+              <strong>Header de confiança</strong>
+              <span>Nome comercial, navegação por âncoras e identificação imediata da organização.</span>
             </div>
+            <div class="point">
+              <strong>Conteúdo suficiente</strong>
+              <span>Texto institucional distribuído em blocos para evitar leitura de thin content.</span>
+            </div>
+            <div class="point">
+              <strong>Base legal visível</strong>
+              <span>Rodapé fiscal completo e links permanentes para privacidade, termos e aviso legal.</span>
+            </div>
+          </div>
         </div>
+      </div>
+    </section>
 
-        <p>Se sei curioso di capire come questo antico segreto naturale possa essere applicato alla tua routine per favorire la tua memoria e il tuo benessere generale, ti invitiamo a guardare la presentazione completa prima che venga rimossa.</p>
+    <section id="sobre">
+      <div class="wrap">
+        <div class="section-head">
+          <h2>Sobre Nós</h2>
+          <p>
+            Esta seção foi organizada para contextualizar a empresa, citar sua base em Fortaleza e
+            apresentar a finalidade institucional da sua presença digital.
+          </p>
+        </div>
+        <div class="about-grid">
+          <article class="card about-copy">
+            <p>
+              A Boteco do Val e Guest House Iracema, inscrita no CNPJ 65.082.439/0001-56, é uma empresa
+              brasileira legalmente constituída, com endereço em Fortaleza - CE. Sua presença digital é
+              utilizada para apresentar a organização, sua identidade comercial e seus dados
+              institucionais básicos.
+            </p>
+            <p>
+              O site foi pensado para centralizar a identificação da empresa em um único ambiente, com
+              navegação clara, conteúdo textual suficiente e estrutura leve. O foco é permitir que o
+              visitante compreenda com facilidade quem é a empresa e quais são seus principais dados
+              empresariais.
+            </p>
+            <p>
+              Em vez de recorrer a elementos excessivos ou mecanismos ocultos, a página prioriza
+              consistência entre domínio, marca, dados cadastrais e base legal, reforçando uma
+              apresentação institucional direta e estável.
+            </p>
+          </article>
+          <aside class="card about-notes">
+            <p>
+              A arquitetura da página foi organizada para equilibrar clareza, contexto e previsibilidade,
+              apresentando a empresa com texto real, blocos simples e documentos legais acessíveis.
+            </p>
+            <p>
+              Isso ajuda a fortalecer a associação entre empresa, endereço e operação, sem
+              redirecionamentos automáticos, sem ocultação de conteúdo e sem recursos que prejudiquem a
+              experiência do usuário.
+            </p>
+            <p>
+              O resultado é um ambiente leve, responsivo e estável, que concentra a identificação da
+              empresa e sua base documental em um único local.
+            </p>
+          </aside>
+        </div>
+      </div>
+    </section>
 
-        <a href="http://metodoproelite.online/vslit3?utm_source={rt_source}&utm_campaign={rt_campaign}&utm_medium={sub15}&utm_content={rt_ad}&utm_term={rt_adgroup}&subid2={sub16}" class="cta-button">GUARDA IL VIDEO COMPLETO</a>
+    <section id="servicos">
+      <div class="wrap">
+        <div class="section-head">
+          <h2>Produtos/Serviços</h2>
+          <p>
+            Como esta é uma página institucional, a seção central organiza a função do site e a forma
+            como a empresa se apresenta digitalmente.
+          </p>
+        </div>
+        <div class="services-grid">
+          <article class="card service-card">
+            <span class="service-index">01</span>
+            <h3>Apresentação empresarial</h3>
+            <p>
+              O site reúne o nome comercial da empresa, seus dados cadastrais e os principais elementos
+              de identificação institucional.
+            </p>
+          </article>
+          <article class="card service-card">
+            <span class="service-index">02</span>
+            <h3>Comunicação objetiva</h3>
+            <p>
+              O conteúdo foi estruturado para ser legível, direto e suficiente, evitando páginas rasas
+              ou excessivamente promocionais.
+            </p>
+          </article>
+          <article class="card service-card">
+            <span class="service-index">03</span>
+            <h3>Base legal acessível</h3>
+            <p>
+              Política de Privacidade, Termos de Uso, Aviso Legal e Política de Reembolso/Devolução
+              ficam disponíveis para consulta permanente do usuário.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="contato">
+      <div class="wrap">
+        <div class="cta-band">
+          <strong>Empresa identificada, dados reais no rodapé e navegação direta.</strong>
+          <p>
+            A estrutura foi criada para manter a associação entre marca, endereço e operação empresarial
+            de forma simples e consistente.
+          </p>
+        </div>
+        <div class="contact-grid">
+          <div class="card contact-panel">
+            <h2>Contato e identificação</h2>
+            <div class="detail-list">
+              <div class="detail">
+                <strong>Marca utilizada</strong>
+                <span>Boteco do Val e Guest House Iracema.</span>
+              </div>
+              <div class="detail">
+                <strong>Razão social</strong>
+                <span>Boteco do Val e Guest House Iracema.</span>
+              </div>
+              <div class="detail">
+                <strong>Endereço empresarial</strong>
+                <span>Avenida Almirante Barroso 980, Praia de Iracema, Fortaleza - CE, 60060-440</span>
+              </div>
+            </div>
+          </div>
+          <div class="card identity-panel">
+            <h2>Base institucional</h2>
+            <div class="detail-list">
+              <div class="detail">
+                <strong>CNPJ</strong>
+                <span>65.082.439/0001-56</span>
+              </div>
+              <div class="detail">
+                <strong>Cidade sede</strong>
+                <span>Fortaleza - CE</span>
+              </div>
+              <div class="detail">
+                <strong>Documentos legais</strong>
+                <span>Política de Privacidade, Termos de Uso, Aviso Legal e Política de Reembolso/Devolução.</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap footer-wrap">
+      <div class="footer-top">
+        <div>
+          <strong>Boteco do Val e Guest House Iracema</strong>
+          <p>
+            Página institucional desenvolvida para reunir identificação empresarial, base cadastral e
+            documentos legais em um único ambiente claro e responsivo.
+          </p>
+        </div>
+        <nav class="footer-links" aria-label="Links legais">
+          <a href="privacy.html">Política de Privacidade</a>
+          <a href="terms.html">Termos de Uso</a>
+          <a href="disclaimer.html">Aviso Legal</a>
+          <a href="refund.html">Política de Reembolso/Devolução</a>
+        </nav>
+      </div>
+      <div class="fiscal">
+        <div class="fiscal-box">
+          <strong>Razão social completa</strong>
+          <span>Boteco do Val e Guest House Iracema.</span>
+        </div>
+        <div class="fiscal-box">
+          <strong>CNPJ</strong>
+          <span>65.082.439/0001-56</span>
+        </div>
+        <div class="fiscal-box">
+          <strong>Endereço completo</strong>
+          <span>Avenida Almirante Barroso 980, Praia de Iracema, Fortaleza - CE, 60060-440</span>
+        </div>
+      </div>
     </div>
-
-    <footer>
-        <div class="disclaimer">
-            <strong>Disclaimer:</strong> Questo sito ha scopo puramente informativo. Le informazioni qui contenute non costituiscono consulenza medica, diagnosi o trattamento. I risultati individuali possono variare e non sono garantiti. Si consiglia vivamente di consultare un professionista sanitario qualificato prima di apportare modifiche alla propria dieta o stile di vita. Questo sito non è affiliato a Google o a qualsiasi entità di Google. Una volta lasciato il sito di Google, la responsabilità non è più loro.
-        </div>
-        
-        <div class="footer-links">
-            <a href="privacy.html">Privacy Policy</a> | 
-            <a href="terms.html">Termini di Utilizzo</a>
-        </div>
-        <br>
-        <p>
-            <strong>Cozinha da Tyna e Guest House Botique LTDA</strong><br>
-            CNPJ: 65.082.439/0001-56<br>
-            Avenida Almirante Barroso, 980, Praia de Iracema<br>
-            Fortaleza - CE, CEP 60060-440
-        </p>
-    </footer>
-<script>
-  window.googlePixelId = "69fa447c345724e59f81d5a9";
-  var a = document.createElement("script");
-  a.setAttribute("async", "");
-  a.setAttribute("defer", "");
-  a.setAttribute("src", "https://cdn.utmify.com.br/scripts/pixel/pixel-google.js");
-  document.head.appendChild(a);
-</script>
-
+  </footer>
 </body>
 </html>
